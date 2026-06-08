@@ -25,43 +25,61 @@
 <body>
 <div class="wrap">
   <h1>WordLenz — Privacy Policy</h1>
-  <div class="updated">Last updated: 2026-06-07</div>
+  <div class="updated">Last updated: 2026-06-08</div>
   <div class="lang-switch"><a href="#en">English</a><a href="#ko">한국어</a></div>
 
   <section id="en">
   <h2>English</h2>
-  <p><strong>WordLenz does not collect, store, or transmit your personal data to us.</strong> There is no server and no user account. Everything you create stays on your device.</p>
+  <p>WordLenz is built to <strong>minimize the data we handle</strong>. There is <strong>no login, no account, and no personal profile</strong> — we never ask for your name, email, or password. Almost everything you create stays on your device. This policy explains the few cases where data leaves your device.</p>
+
+  <h3>Anonymous identity</h3>
+  <p>On first launch, the app's purchase layer (<strong>RevenueCat</strong>) generates a <strong>random anonymous ID</strong> for your installation. It is <strong>not</strong> linked to your name, email, Apple/Google account, or any personal information, and it is <strong>not</strong> used for advertising or cross-app tracking. We use it only to (a) know which plan you are on and (b) count how many free analyses you have used. Reinstalling the app generates a new anonymous ID.</p>
 
   <h3>What stays on your device</h3>
   <ul>
     <li><strong>Saved words, books, and review schedules</strong> are stored locally in an on-device database (SQLite).</li>
-    <li><strong>API keys</strong> are stored in the device's secure storage (iOS Keychain / Android Keystore). They never leave your device except when a request is sent directly to the AI provider you chose.</li>
-    <li><strong>Photos you capture</strong> are processed on-device and stored locally as part of your entries.</li>
+    <li><strong>API keys</strong> (only if you add your own under the BYOK option) are stored in the device's secure storage (iOS Keychain / Android Keystore).</li>
+    <li><strong>Photos you capture</strong> are stored locally as part of your entries. We never store your photo library or saved entries on a server.</li>
   </ul>
+
+  <h3>How analysis works (two paths)</h3>
+  <p>To interpret a highlighted word or sentence, the relevant <strong>image or text</strong> is sent over HTTPS for AI processing. Where it goes depends on your plan:</p>
+  <ul>
+    <li><strong>Free and subscription plans</strong> — the request is sent to <strong>our proxy server</strong> (hosted on Cloudflare), which forwards it to <strong>Google Gemini</strong> using <strong>our</strong> API key and returns the result. Our proxy <strong>does not store your image or text</strong> — it passes them through and keeps only your anonymous ID and a usage counter. Google processes the content under its own terms (linked below).</li>
+    <li><strong>"Bring Your Own Key" (BYOK) unlock</strong> — if you unlock BYOK and configure your own API key, the request is sent <strong>directly from your device to the AI provider you choose</strong> (Google Gemini, OpenAI, Anthropic, or Qwen) using <strong>your own key</strong>. In this mode the request does <strong>not</strong> pass through our proxy, and we never see or store it.</li>
+  </ul>
+  <p>We do not keep copies of the images or text you analyze.</p>
+
+  <h3>Purchases</h3>
+  <p>Subscriptions and the one-time BYOK unlock are processed by the <strong>Apple App Store / Google Play</strong> billing systems and managed through <strong>RevenueCat</strong>. We receive only your <strong>purchase status</strong> (which plan is active) tied to your anonymous ID — never your payment card or billing address, which are handled entirely by Apple/Google.</p>
 
   <h3>Camera &amp; Photos</h3>
   <ul>
     <li><strong>Camera</strong> is used only to photograph highlighted/underlined text you want to analyze.</li>
     <li><strong>Photo library</strong> access is used only when you pick an existing image to analyze.</li>
   </ul>
-  <p>We never upload your photos to us.</p>
 
-  <h3>AI providers (important)</h3>
-  <p>To interpret a word or sentence, the image or text is sent <strong>directly from your device to the AI provider you choose and configure</strong> (Google Gemini, OpenAI, or Anthropic) using <strong>your own API key</strong>. We do not proxy, see, or store this data. Your use of these services is governed by their respective privacy policies:</p>
+  <h3>Backup</h3>
+  <p>When you explicitly use <strong>Export Data</strong>, WordLenz creates a single backup file and lets you save it through the system share sheet (Files, iCloud, Google Drive, etc.). <strong>This file contains your API keys (if any) in plain text — keep it private.</strong> We never receive this file.</p>
+
+  <h3>No advertising or tracking</h3>
+  <p>WordLenz contains <strong>no advertising and no third-party tracking or analytics SDKs</strong>. RevenueCat and our proxy are used only for purchases and AI processing as described above — never for profiling, advertising, or selling data.</p>
+
+  <h3>Third-party services</h3>
   <ul>
     <li>Google Gemini — <a href="https://ai.google.dev/gemini-api/terms">ai.google.dev/gemini-api/terms</a></li>
     <li>OpenAI — <a href="https://openai.com/policies/privacy-policy">openai.com/policies/privacy-policy</a></li>
     <li>Anthropic — <a href="https://www.anthropic.com/legal/privacy">anthropic.com/legal/privacy</a></li>
+    <li>Qwen (Alibaba Cloud) — <a href="https://www.alibabacloud.com/help/en/legal/latest-alibaba-cloud-international-website-privacy-policy">alibabacloud.com privacy policy</a></li>
+    <li>RevenueCat — <a href="https://www.revenuecat.com/privacy">revenuecat.com/privacy</a></li>
+    <li>Cloudflare (proxy hosting) — <a href="https://www.cloudflare.com/privacypolicy/">cloudflare.com/privacypolicy</a></li>
   </ul>
-
-  <h3>Backup</h3>
-  <p>When you explicitly use <strong>Export Data</strong>, WordLenz creates a single backup file and lets you save it through the system share sheet (Files, iCloud, Google Drive, etc.). <strong>This file contains your API keys in plain text — keep it private.</strong> We never receive this file.</p>
-
-  <h3>No tracking</h3>
-  <p>WordLenz contains <strong>no analytics, no advertising, and no third-party tracking SDKs</strong>.</p>
 
   <h3>Children</h3>
   <p>WordLenz is not directed to children under 13.</p>
+
+  <h3>Changes</h3>
+  <p>We may update this policy; the "Last updated" date will change accordingly.</p>
 
   <h3>Contact</h3>
   <p>Questions: <a href="mailto:hyunsoo.go@gmail.com">hyunsoo.go@gmail.com</a></p>
@@ -69,33 +87,56 @@
 
   <section id="ko">
   <h2>한국어</h2>
-  <p><strong>WordLenz는 사용자의 개인정보를 수집·저장하거나 당사로 전송하지 않습니다.</strong> 별도의 서버나 계정이 없으며, 사용자가 만든 모든 데이터는 기기 안에만 저장됩니다.</p>
+  <p>WordLenz는 <strong>다루는 데이터를 최소화</strong>하도록 설계되었습니다. <strong>로그인·계정·개인 프로필이 없으며</strong>, 이름·이메일·비밀번호를 일절 요구하지 않습니다. 사용자가 만든 거의 모든 데이터는 기기 안에만 저장됩니다. 본 방침은 데이터가 기기를 벗어나는 몇 가지 경우를 설명합니다.</p>
+
+  <h3>익명 식별자</h3>
+  <p>앱 최초 실행 시 결제 레이어(<strong>RevenueCat</strong>)가 해당 설치에 대해 <strong>무작위 익명 ID</strong>를 생성합니다. 이 ID는 이름·이메일·Apple/Google 계정 등 어떤 개인정보와도 연결되지 않으며, 광고나 앱 간 추적에 사용되지 않습니다. 우리는 이 ID를 오직 (a) 현재 요금제 확인, (b) 무료 해석 사용 횟수 집계에만 사용합니다. 앱을 재설치하면 새 익명 ID가 생성됩니다.</p>
 
   <h3>기기에만 저장되는 데이터</h3>
   <ul>
     <li><strong>저장한 단어·책·복습 일정</strong>은 기기 내 데이터베이스(SQLite)에 로컬 저장됩니다.</li>
-    <li><strong>API 키</strong>는 기기 보안 저장소(iOS Keychain / Android Keystore)에 저장되며, 사용자가 선택한 AI 제공자에게 직접 요청을 보낼 때를 제외하고 기기를 벗어나지 않습니다.</li>
-    <li><strong>촬영한 사진</strong>은 기기에서 처리되어 항목의 일부로 로컬 저장됩니다.</li>
+    <li><strong>API 키</strong>(BYOK 옵션에서 사용자가 직접 입력한 경우에 한함)는 기기 보안 저장소(iOS Keychain / Android Keystore)에 저장됩니다.</li>
+    <li><strong>촬영한 사진</strong>은 항목의 일부로 기기에 로컬 저장됩니다. 사진 보관함이나 저장된 항목을 서버에 저장하지 않습니다.</li>
   </ul>
+
+  <h3>해석 동작 방식 (두 경로)</h3>
+  <p>단어·문장을 해석하기 위해 해당 <strong>이미지 또는 텍스트</strong>가 AI 처리를 위해 HTTPS로 전송됩니다. 전송 경로는 요금제에 따라 다릅니다.</p>
+  <ul>
+    <li><strong>무료·구독 요금제</strong> — 요청은 <strong>우리 프록시 서버</strong>(Cloudflare 호스팅)로 전송되고, 서버가 <strong>우리</strong> API 키로 <strong>Google Gemini</strong>에 전달한 뒤 결과를 반환합니다. 프록시는 <strong>이미지나 텍스트를 저장하지 않고</strong> 통과시키며, 익명 ID와 사용 횟수 카운터만 보관합니다. 콘텐츠 처리는 Google의 약관을 따릅니다(아래 링크).</li>
+    <li><strong>BYOK(자기 키) 해제</strong> — BYOK를 해제하고 본인 API 키를 설정하면, 요청은 사용자가 선택한 AI 제공자(Google Gemini, OpenAI, Anthropic, Qwen)에게 <strong>본인 키로 기기에서 직접</strong> 전송됩니다. 이 경우 요청은 우리 프록시를 거치지 <strong>않으며</strong>, 우리는 이를 열람·저장하지 않습니다.</li>
+  </ul>
+  <p>우리는 사용자가 해석하는 이미지나 텍스트의 사본을 보관하지 않습니다.</p>
+
+  <h3>결제</h3>
+  <p>구독과 일회성 BYOK 해제는 <strong>Apple App Store / Google Play</strong> 결제 시스템으로 처리되며 <strong>RevenueCat</strong>으로 관리됩니다. 우리는 익명 ID에 연결된 <strong>구매 상태(어떤 요금제가 활성인지)</strong>만 받으며, 결제 카드나 청구 주소는 받지 않습니다(전적으로 Apple/Google이 처리).</p>
 
   <h3>카메라 · 사진</h3>
   <ul>
     <li><strong>카메라</strong>는 해석할 형광펜·밑줄 표시 텍스트를 촬영하는 데만 사용됩니다.</li>
     <li><strong>사진 보관함</strong>은 해석할 기존 이미지를 선택할 때만 접근합니다.</li>
   </ul>
-  <p>당사는 사진을 수집하지 않습니다.</p>
-
-  <h3>AI 제공자 (중요)</h3>
-  <p>단어·문장을 해석하기 위해, 이미지 또는 텍스트는 <strong>사용자가 직접 선택·설정한 AI 제공자</strong>(Google Gemini, OpenAI, Anthropic)에게 <strong>사용자 본인의 API 키</strong>로 <strong>기기에서 직접</strong> 전송됩니다. 당사는 이 데이터를 중계·열람·저장하지 않습니다. 해당 서비스 이용에는 각 사의 개인정보 정책이 적용됩니다.</p>
 
   <h3>백업</h3>
-  <p><strong>데이터 내보내기</strong>를 실행하면 단일 백업 파일이 생성되어 시스템 공유 시트(파일, iCloud, Google Drive 등)로 저장할 수 있습니다. <strong>이 파일에는 API 키가 평문으로 포함되므로 안전하게 보관하세요.</strong> 당사는 이 파일을 수신하지 않습니다.</p>
+  <p><strong>데이터 내보내기</strong>를 실행하면 단일 백업 파일이 생성되어 시스템 공유 시트(파일, iCloud, Google Drive 등)로 저장할 수 있습니다. <strong>이 파일에는 API 키(있는 경우)가 평문으로 포함되므로 안전하게 보관하세요.</strong> 당사는 이 파일을 수신하지 않습니다.</p>
 
-  <h3>추적 없음</h3>
-  <p>WordLenz에는 <strong>분석 도구·광고·제3자 추적 SDK가 전혀 없습니다.</strong></p>
+  <h3>광고·추적 없음</h3>
+  <p>WordLenz에는 <strong>광고나 제3자 추적·분석 SDK가 전혀 없습니다.</strong> RevenueCat과 프록시는 위에 설명한 결제·AI 처리 용도로만 사용되며, 프로파일링·광고·데이터 판매에 사용되지 않습니다.</p>
+
+  <h3>제3자 서비스</h3>
+  <ul>
+    <li>Google Gemini — <a href="https://ai.google.dev/gemini-api/terms">ai.google.dev/gemini-api/terms</a></li>
+    <li>OpenAI — <a href="https://openai.com/policies/privacy-policy">openai.com/policies/privacy-policy</a></li>
+    <li>Anthropic — <a href="https://www.anthropic.com/legal/privacy">anthropic.com/legal/privacy</a></li>
+    <li>Qwen (Alibaba Cloud) — <a href="https://www.alibabacloud.com/help/en/legal/latest-alibaba-cloud-international-website-privacy-policy">alibabacloud.com 개인정보 정책</a></li>
+    <li>RevenueCat — <a href="https://www.revenuecat.com/privacy">revenuecat.com/privacy</a></li>
+    <li>Cloudflare (프록시 호스팅) — <a href="https://www.cloudflare.com/privacypolicy/">cloudflare.com/privacypolicy</a></li>
+  </ul>
 
   <h3>아동</h3>
   <p>WordLenz는 만 13세 미만 아동을 대상으로 하지 않습니다.</p>
+
+  <h3>변경</h3>
+  <p>본 방침은 갱신될 수 있으며, 변경 시 상단의 "Last updated" 날짜가 갱신됩니다.</p>
 
   <h3>문의</h3>
   <p><a href="mailto:hyunsoo.go@gmail.com">hyunsoo.go@gmail.com</a></p>
